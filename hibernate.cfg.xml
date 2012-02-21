@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+      <property name="hibernate.connection.driver_class">
+           net.sourceforge.jtds.jdbc.Driver
+      </property>
+      <property name="hibernate.connection.url">
+           <!--jdbc:jtds:sqlserver://172.29.16.56/dbNetsuiteAdeptia
+           jdbc:db2://dd.paservers:50001/WCSTG70-->
+	   	jdbc:jtds:sqlserver://172.29.16.56/dbNetsuiteBoomi
+      </property>
+      <property name="hibernate.connection.username">appWebLibrary</property>
+      <property name="hibernate.connection.password">s3arch!</property>
+      <property name="hibernate.connection.pool_size">2</property>
+      <property name="show_sql">false</property>
+      <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+      <property name="hibernate.hbm2ddl.auto"></property>
+      <property name="hibernate.search.default.directory_provider"> 
+          org.hibernate.search.store.FSDirectoryProvider
+      </property>
+      <property name="hibernate.search.default.indexBase">
+          /home/glassfish/lucene/indexes/
+      </property>
+      <!-- Mapping -->
+      <mapping class="com.playaway.web.library.MasterTitle"/>
+      <mapping class="com.playaway.web.library.Author"/>
+      <mapping class="com.playaway.web.library.Publisher"/>
+      <mapping class="com.playaway.web.library.Genre"/>
+      <mapping class="com.playaway.web.library.Award"/>
+      <mapping class="com.playaway.web.library.Abridgement"/>
+      <mapping class="com.playaway.web.library.AgeLevel"/>
+      <mapping class="com.playaway.web.library.TitleSeries"/>
+      <mapping class="com.playaway.web.library.Territory"/>
+      <mapping class="com.playaway.web.library.ReleaseCategory"/>
+      <mapping class="com.playaway.web.library.Featured"/>
+      <mapping class="com.playaway.web.library.Accessory"/>
+      <mapping class="com.playaway.web.library.Service"/>
+
+
+   </session-factory>
+</hibernate-configuration>
